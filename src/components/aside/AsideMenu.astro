@@ -1,0 +1,36 @@
+---
+import Menu from "@Components/aside/Menu";
+---
+
+<aside class="f-col g-2 fixed h-100" id="aside-menu" style="min-width: 360px;">
+    <div class="f-row f-justify-center f-align-center">
+        <Menu state={false} client:visible />
+        <h2>Aside Menu</h2>
+    </div>
+    <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/#servicios">Servicios</a></li>
+        <li><a href="/planes">Planes</a></li>
+        <li><a href="/portafolio">Portafolio</a></li>
+        <li><a href="/FAQs">FAQ's</a></li>
+    </ul>
+</aside>
+
+<style>
+    #aside-menu {
+        background-color: rgb(var(--lb-bg));
+        border-left: solid 1px rgb(var(--lb-br));
+        right: -160%;
+        transition: right 0.25s ease;
+        z-index: 1000;
+    }
+    #aside-menu.active {
+        right: 0;
+    }
+
+    @media (max-width: 620px) {
+        #aside-menu {
+            width: 100%;
+        }
+    }
+</style>

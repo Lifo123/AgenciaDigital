@@ -1,0 +1,34 @@
+---
+import { Icon } from "@lifo123/library";
+
+interface Props {
+    title: string;
+    price: string;
+    description: string;
+    href?: string;
+    list: string[];
+}
+
+const { title, price, description, href, list } = Astro.props;
+---
+
+<div class="plan-card br-14 text-left">
+    <span>{price}</span>
+    <h2>{title}</h2>
+    <p>{description}</p>
+    <a href={href || "/contacto"} class="fs-2 fw-500 br-6 d-flex f-center"> Obtener Plan </a>
+    <ul class="f-col g-2 m-0 p-0 ">
+        {
+            list.map((item) => (
+                <li class="fs-custom-15-5 fw-300 f-row g-2">
+                    <span class="d-flex f-center">
+                        <svg viewBox="0 0 24 24" height="16" fill="none">
+                            <path d="m6 12 4 4 9-8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    {item}
+                </li>
+            ))
+        }
+    </ul>
+</div>

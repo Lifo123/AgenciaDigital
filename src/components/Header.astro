@@ -1,0 +1,105 @@
+---
+import { Image } from "astro:assets";
+import LogoIcon from "@Assets/icons/Logo.webp";
+import Menu from "./aside/Menu";
+---
+
+<span class="dev-msg py-2 fs-custom-15 f-center d-flex"
+    >Pagina en desarrollo</span
+>
+<header class="header w-100 sticky f-row f-center sd-1" style="top: 0;">
+    <nav
+        class="f-row f-justify-between f-align-center w-90 mx-auto"
+        style="max-width: var(--maxWidth);"
+    >
+        <a href="/" class="fs-6 fw-700">
+            <Image
+                src={LogoIcon}
+                height={46}
+                width={250}
+                alt="Logo"
+                style={{ objectFit: "contain" }}
+                loading="lazy"
+            />
+        </a>
+        <ul class="f-row f-center g-5">
+            <li class="head-menu">
+                <a href="/planes" class="fs-custom-15 fw-500 py-1">Planes</a>
+            </li>
+            <li class="head-menu">
+                <a href="/#servicios" class="fs-custom-15 fw-500 py-1"
+                    >Servicios</a
+                >
+            </li>
+            <li class="head-menu">
+                <a href="/portafolio" class="fs-custom-15 fw-500 py-1"
+                    >Proyectos</a
+                >
+            </li>
+            <li class="head-menu">
+                <a href="/FAQs" class="fs-custom-15 fw-500 py-1">FAQ's</a>
+            </li>
+            <li class="head-menu-btn d-flex f-center">
+                <Menu state={true} client:visible />
+            </li>
+            <li>
+                <a
+                    href="/contacto"
+                    class="btn-head br-6 fs-custom-15 d-flex f-center"
+                    >Contacto</a
+                >
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    .dev-msg {
+        background-color: rgb(var(--lb-btn-primary));
+        color: white;
+    }
+
+    .header {
+        height: 76px;
+        top: 0;
+        background-color: rgba(var(--lb-bg));
+        z-index: 900;
+    }
+
+    .header a {
+        color: rgb(var(--lb-title));
+        position: relative;
+    }
+    .head-menu a::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background-color: var(--pr-color-primary);
+        transition: width 0.25s ease;
+    }
+
+    .head-menu a:hover::after {
+        width: 100%;
+    }
+
+    .btn-head {
+        padding: 0.7rem 1.5rem;
+        height: 40px;
+        font-weight: 450;
+        border: solid 1px rgb(var(--lb-btn-primary));
+    }
+    .head-menu-btn {
+        display: none;
+    }
+    @media (max-width: 768px) {
+        .head-menu {
+            display: none;
+        }
+        .head-menu-btn {
+            display: flex;
+        }
+    }
+</style>

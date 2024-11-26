@@ -1,0 +1,48 @@
+---
+
+---
+
+
+<head>
+    <title>Page Not Found</title>
+    <meta name="description" content="Page Not Found" />
+    <link rel="icon" href="/Flifo.svg" />
+    <link rel="apple-touch-icon" href="/Flifo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+        rel="preload"
+        href="https://lifo123.github.io/FlifoCSS/Flifo.css"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link
+            rel="stylesheet"
+            href="https://lifo123.github.io/FlifoCSS/Flifo.css"
+        />
+    </noscript>
+</head>
+
+<div class="fixed f-col f-center h-100 w-100">
+    <div class="f-col g-1 f-center mb-12">
+        <h1 class="title">Page Not Found</h1>
+        <h2 class="subtitle fs-4 mb-4">Error 404</h2>
+        <p class="btn btn-third br-6 pointer" onclick="history.back()">
+            Get Back
+        </p>
+    </div>
+</div>
+
+<style is:inline>
+    h1 {
+        font-size: calc(var(--lb-multiplier) * 26px) !important;
+        margin-bottom: 0.6rem !important;
+    }
+    p {
+        padding: 12px 24px;
+        width: max-content;
+        background-color: var(--f-tittle);
+        color: var(--f-bg);
+    }
+</style>

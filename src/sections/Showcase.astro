@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets";
+import ShowcaseIMG from "@Assets/images/Showcase.webp";
+---
+
+<section
+    class="f-row f-justify-between f-wrap g-6 w-95 mx-auto my-14 br-18 p-7"
+    id="demo"
+    style="max-width: var(--maxWidth);"
+>
+    <h2
+        class="text-left fw-500 h-max mr-10"
+        style="color: white; max-width: 450px;"
+    >
+        Diseños creativos para tu negocio. disponible en todo tipo de
+        presupuesto.
+    </h2>
+    <div class="f-col g-2 w-50 f-grow" style="">
+        <div>
+            <p class="text-left fs-custom-17 fw-300" style="color: white;">
+                We’ll help you understand your audiencences and wiork together
+                with you to design streamlined user flows that significantly
+                enhance your digital experience
+            </p>
+            <Image
+                class={"br-10 mt-3"}
+                src={ShowcaseIMG}
+                alt="Showcase"
+                width={1500}
+                height={320}
+                loading="lazy"
+            />
+            <div class="f-row g-4 mt-4">
+                <a
+                href="/contacto"
+                class="btn-border br-6 fs-2 fw-500 d-flex f-center w-max"
+                >Escribenos</a
+                >
+                <a href="/planes" class="info-title-primary px-4 fs-2 br-6 fw-600 d-flex f-center w-max" >
+                    Planes
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    #demo {
+        background-color: black;
+    }
+    .btn-border {
+        padding: 0.7rem 1.5rem;
+        height: 40px;
+        font-weight: 450;
+        color: white;
+        border: solid 1px white;
+    }
+    #demo img {
+        width: 100%;
+        object-fit: cover;
+    }
+</style>

@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import Whatsapp from "@Assets/icons/whatsapp.webp";
+import { Icon } from "@lifo123/library";
+---
+
+<span class="fixed fixed-btns f-col f-center">
+    <ul class="f-col g-2 f-center">
+        <li class="br-50 o-hidden d-flex f-center pointer">
+            <a href="https://wa.me/51900081894" target="_blank">
+                <Image src={Whatsapp} alt="Whatsapp" width="50" height="50" loading="eager"/>
+            </a>
+        </li>
+        <li
+            class="br-50 o-hidden d-flex f-center icon pointer"
+            style="background-color: #6c6c6c2d;"
+            onclick="window.scrollTo({top: 0});"
+        >
+            <Icon icon="arrow" size={26} className="no-select" />
+        </li>
+    </ul>
+</span>
+
+<style>
+    .fixed-btns {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+    }
+    .fixed-btns ul > li {
+        height: 50px;
+        width: 50px;
+        aspect-ratio: 1/1;
+    }
+</style>

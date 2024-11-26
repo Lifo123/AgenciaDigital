@@ -1,0 +1,13 @@
+:root{
+    --pr-bg: #2d5383;
+    --pr-color-primary: #FBC902;
+    --maxWidth: 1280px;
+}
+
+.light{
+    --project-primary: 245, 245,245;
+}
+
+.dark{
+    --project-primary: 10, 10,10;
+}

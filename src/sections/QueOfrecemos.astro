@@ -1,0 +1,65 @@
+---
+import InfoProyectos from "./InfoProyectos.astro";
+---
+
+<section
+    class="f-col w-95 mx-auto mt-13"
+    id="servicios"
+    style="min-height: 70dvh; max-width: var(--maxWidth);"
+>
+    <InfoProyectos />
+    <div class="mt-10 f-col f-center mb-2">
+        <h2 class="pr-subtitle">¿Que Ofrecemos?</h2>
+        <p
+            class="m-0 text-center fs-3 mt-3 fw-400"
+            style="line-height: 1.65; max-width: 700px;"
+        >
+            Somos una agencia de diseño web especializada en crear sitios web
+            para tu negocio. Tenemos la solución perfecta para tus necesidades.
+        </p>
+
+        <div class="f-row g-6 mt-4 f-wrap mt-10 f-center">
+            <div class="offer-card f-col g-2 p-3 br-10">
+                <span class="icon d-flex f-center mx-auto"></span>
+                <h3 class="fs-5 fw-600">Paginas Web</h3>
+                <p>
+                    Páginas Web exitosas mediante diseños creativos de alto
+                    impacto visual
+                </p>
+            </div>
+            <div class="offer-card f-col g-2 p-3 br-10">
+                <span class="icon d-flex f-center mx-auto"></span>
+                <h3 class="fs-5 fw-600">Estrategias SEO</h3>
+                <p>
+                    Gestionamos las campañas de publicidad de tu empresa en los
+                    buscadores
+                </p>
+            </div>
+            <div class="offer-card f-col g-2 p-3 br-10">
+                <span class="icon d-flex f-center mx-auto"></span>
+                <h3 class="fs-5 fw-600">Tienda Online</h3>
+                <p>
+                    Desarrollamos tu tienda online para impulsar tus ventas en
+                    internet
+                </p>
+            </div>
+        </div>
+        <a
+            class="btn br-6 mt-6 fs-custom-15 fw-500"
+            style="color:white; background-color: rgb(var(--lb-btn-primary));"
+            href="/contacto"
+        >
+            Cotizar ahora
+        </a>
+    </div>
+</section>
+
+<style>
+    #servicios {
+        scroll-margin-top: 110px;
+    }
+    .offer-card {
+        background-color: white;
+        max-width: 350px;
+    }
+</style>

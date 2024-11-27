@@ -6,8 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://lifo123.guthub.io/AgenciaDigital/',
-  base: '/AgenciaDigital/',
+  site: 'https://lignastudios.site/',
   integrations: [react(), mdx(), sitemap()],
   outDir: 'Build',
   build: {

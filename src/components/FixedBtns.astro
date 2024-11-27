@@ -5,10 +5,22 @@ import { Icon } from "@lifo123/library";
 ---
 
 <span class="fixed fixed-btns f-col f-center">
-    <ul class="f-col g-2 f-center">
+    <ul class="f-col g-3 f-center">
         <li class="br-50 o-hidden d-flex f-center pointer">
-            <a href="https://wa.me/51900081894" target="_blank">
-                <Image src={Whatsapp} alt="Whatsapp" width="50" height="50" loading="eager"/>
+            <a
+                href="https://wa.me/51900081894"
+                target="_blank"
+                class="d-flex f-center o-hidden"
+                style="height: 50px; aspect-ratio: 1/1;"
+            >
+                <Image
+                    src={Whatsapp}
+                    alt="Whatsapp"
+                    width="64"
+                    height="64"
+                    style={{ marginBottom: "1px" }}
+                    class="image-whatsapp"
+                />
             </a>
         </li>
         <li
@@ -31,5 +43,10 @@ import { Icon } from "@lifo123/library";
         height: 50px;
         width: 50px;
         aspect-ratio: 1/1;
+    }
+    .image-whatsapp {
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
     }
 </style>

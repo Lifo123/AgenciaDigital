@@ -4,6 +4,11 @@ import LogoIcon from "@Assets/icons/Logo.webp";
 import Menu from "./aside/Menu";
 ---
 
+
+
+
+FAQS - PLANES faltan desarrollar
+
 <span class="dev-msg py-2 fs-custom-15 f-center d-flex"
     >Pagina en desarrollo</span
 >
@@ -12,11 +17,11 @@ import Menu from "./aside/Menu";
         class="f-row f-justify-between f-align-center w-90 mx-auto"
         style="max-width: var(--maxWidth);"
     >
-        <a href="/" class="fs-6 fw-700">
+        <a href="/" class="fs-6 fw-700 logo">
             <Image
                 src={LogoIcon}
-                height={46}
-                width={250}
+                height={50}
+                width={270}
                 alt="Logo"
                 style={{ objectFit: "contain" }}
                 loading="lazy"
@@ -24,25 +29,25 @@ import Menu from "./aside/Menu";
         </a>
         <ul class="f-row f-center g-5">
             <li class="head-menu">
-                <a href="/planes" class="fs-custom-15 fw-500 py-1">Planes</a>
-            </li>
-            <li class="head-menu">
                 <a href="/#servicios" class="fs-custom-15 fw-500 py-1"
-                    >Servicios</a
+                >Servicios</a
                 >
             </li>
             <li class="head-menu">
                 <a href="/portafolio" class="fs-custom-15 fw-500 py-1"
-                    >Proyectos</a
+                >Proyectos</a
                 >
             </li>
             <li class="head-menu">
+                <a href="/planes" class="fs-custom-15 fw-500 py-1">Planes</a>
+            </li>
+            <!-- <li class="head-menu">
                 <a href="/FAQs" class="fs-custom-15 fw-500 py-1">FAQ's</a>
+            </li> -->
+            <li class="head-menu-btn d-flex f-center toggleAside">
+                <Menu state={true} />
             </li>
-            <li class="head-menu-btn d-flex f-center">
-                <Menu state={true} client:visible />
-            </li>
-            <li>
+            <li class="head-menu-contact">
                 <a
                     href="/contacto"
                     class="btn-head br-6 fs-custom-15 d-flex f-center"
@@ -75,7 +80,7 @@ import Menu from "./aside/Menu";
         position: absolute;
         top: 100%;
         left: 0;
-        height: 2px;
+        height: 3px;
         width: 0;
         background-color: var(--pr-color-primary);
         transition: width 0.25s ease;
@@ -94,12 +99,21 @@ import Menu from "./aside/Menu";
     .head-menu-btn {
         display: none;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 800px) {
         .head-menu {
             display: none;
         }
         .head-menu-btn {
             display: flex;
+        }
+    }
+    @media (max-width:470px) {
+        .head-menu-contact{
+            display: none;
+        }
+        .header .logo img{
+            height: 34px;
+            width: auto;
         }
     }
 </style>

@@ -1,22 +1,25 @@
 ---
-import { Icon } from "@lifo123/library";
 
 interface Props {
     title: string;
-    price: string;
+    price: number;
     description: string;
+    subtitle?: string;
     href?: string;
+    listAdvice?: string[];
     list: string[];
+    finalMessage?: string;
+    anualPrice?: string;
+    active?: boolean;
 }
 
-const { title, price, description, href, list } = Astro.props;
+const { title, price, description, href, list, active, finalMessage, listAdvice, subtitle } = Astro.props;
 ---
 
-<div class="plan-card br-14 text-left">
-    <span>{price}</span>
-    <h2>{title}</h2>
+<div class={`plan-card br-14 text-left ${active ? '' : 'dark'}`}>
+    <span>{`${price > 9000 ? '+' : ''} S/${price}`}.00</span>
+    <h2 class="fs-5 fw-400" style="color: white;">{title}</h2>
     <p>{description}</p>
-    <a href={href || "/contacto"} class="fs-2 fw-500 br-6 d-flex f-center"> Obtener Plan </a>
     <ul class="f-col g-2 m-0 p-0 ">
         {
             list.map((item) => (
@@ -31,4 +34,5 @@ const { title, price, description, href, list } = Astro.props;
             ))
         }
     </ul>
+    <a href={href || "/contacto"} class="fs-2 fw-500 br-6 d-flex f-center"> Obtener Plan </a>
 </div>

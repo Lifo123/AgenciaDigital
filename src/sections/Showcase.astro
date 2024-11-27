@@ -17,10 +17,12 @@ import ShowcaseIMG from "@Assets/images/Showcase.webp";
     </h2>
     <div class="f-col g-2 w-50 f-grow" style="">
         <div>
-            <p class="text-left fs-custom-17 fw-300" style="color: white;">
-                We’ll help you understand your audiencences and wiork together
-                with you to design streamlined user flows that significantly
-                enhance your digital experience
+            <p
+                class="text-left fs-custom-17 fw-300"
+                style="color: var(--pr-text-black);"
+            >
+                LignaStudios expertos en diseño web y soluciones digitales para
+                impulsar negocios y emprendedores en internet.
             </p>
             <Image
                 class={"br-10 mt-3"}
@@ -30,13 +32,16 @@ import ShowcaseIMG from "@Assets/images/Showcase.webp";
                 height={320}
                 loading="lazy"
             />
-            <div class="f-row g-4 mt-4">
+            <div class="showcase-btn f-row g-4 mt-4 f-wrap">
                 <a
-                href="/contacto"
-                class="btn-border br-6 fs-2 fw-500 d-flex f-center w-max"
-                >Escribenos</a
+                    href="/contacto"
+                    class="btn-border br-6 fs-2 fw-500 d-flex f-center w-max"
+                    >Escribenos</a
                 >
-                <a href="/planes" class="info-title-primary px-4 fs-2 br-6 fw-600 d-flex f-center w-max" >
+                <a
+                    href="/planes"
+                    class="info-title-primary px-4 fs-custom-15 br-6 fw-600 d-flex f-center w-max"
+                >
                     Planes
                 </a>
             </div>
@@ -58,5 +63,18 @@ import ShowcaseIMG from "@Assets/images/Showcase.webp";
     #demo img {
         width: 100%;
         object-fit: cover;
+    }
+    @media (width < 550px) {
+        #demo {
+            padding: 2rem 1.6rem !important;
+        }
+        #demo h2 {
+            margin: 0;
+        }
+        .showcase-btn a{
+            flex-grow: 1;
+            min-width: max-content;
+            padding: 0.7rem 1.5rem;
+        }
     }
 </style>

@@ -1,0 +1,14 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+    title: string
+    image: string;
+    href: string;
+}
+const { title, image, href } = Astro.props;
+---
+
+<a class="project-card f-col br-4 o-hidden f-center" href={href}>
+    <Image src={image} alt={title} width={450} height={300} style={"object-fit: cover;"} />
+</a>

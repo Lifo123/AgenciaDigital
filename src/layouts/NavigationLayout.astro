@@ -1,0 +1,32 @@
+---
+import Layout from "./Layout.astro";
+
+interface Props {
+    title: string;
+    pageTitle?: string;
+    description?: string;
+    pageDescription?: string;
+}
+const { title, description, pageDescription, pageTitle } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+    <main
+        class="f-col text-center mt-9 mx-auto w-95"
+        style="min-height: 60dvh; max-width: var(--maxWidth);"
+    >
+        <h1 class="text-center fw-600 mb-1">
+            <span class="title-bg-primary px-3 br-4 pb-1"
+                >{pageTitle || title}</span
+            >
+        </h1>
+        {
+            pageDescription && (
+                <p class="my-3 mx-auto" style="max-width: 700px;">
+                    {pageDescription}
+                </p>
+            )
+        }
+        <slot />
+    </main>
+</Layout>

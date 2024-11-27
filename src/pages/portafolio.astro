@@ -1,15 +1,30 @@
 ---
-import Layout from "@Layouts/Layout.astro";
-
+import ProjectCard from "@Components/ProjectCard.astro";
+import NavigationLayout from "@Layouts/NavigationLayout.astro";
 ---
 
-<Layout title="Portafolio" description="Portafolio">
-	<main class="f-col f-justify-center text-center mt-8">
-		<h1 class="text-center fw-600">
-			<span class="title-bg-primary px-3 br-4 pb-1">
-			  Proyectos
-			</span>
-		  </h1>
-		<p class="my-3">Haz crecer tu negocio adquiriendo nuestros servicios.</p>
-	</main>
-</Layout>
+<NavigationLayout title="Portafolio" pageTitle="Proyectos" pageDescription="Conoce nuestros proyectos más destacados, donde la creatividad y la innovación se unen para transformar ideas en realidades digitales únicas.">
+	<div class="f-row g-8 mt-8 f-wrap f-center">
+		<ProjectCard
+			title="WordGuess App"
+			image="https://www.primarygames.com/langarts/wordguess/logo200.png"
+			href="https://wordguess.site/"
+		/>
+		<ProjectCard
+			title="Portafolio Web"
+			image="https://pbs.twimg.com/media/GT8DksiWsAEknhk?format=webp&name=medium"
+			href="https://lifo123.site/"
+		/>
+		<ProjectCard
+			title="Maneajr Tornernos"
+			image="https://pbs.twimg.com/media/GQyQ7oqWAAAQrox?format=webp&name=medium"
+			href="https://lifo123.github.io/ManageTournaments/"
+		/>
+	</div>
+	<div class="f-col g-2">
+		<h2 class="text-left fw-500 h-max mt-10 fs-8">
+			Proyectos en desarrollo
+		</h2>
+		<p class="m-0 text-left">En construccion...</p>
+	</div>
+</NavigationLayout>

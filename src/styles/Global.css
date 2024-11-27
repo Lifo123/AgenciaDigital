@@ -4,7 +4,11 @@
     font-family: Inter;
     src: url('/InterVariable.woff2') format('woff2');
     font-display: swap;
-    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -12,8 +16,24 @@ body {
     background-color: rgba(var(--lb-bg));
 }
 
-.title-bg-primary{
-    color:rgb(var(--lb-black)); 
+#hero h1 {
+    font-size: 50px;
+    color: #141516;
+    line-height: 1.4;
+}
+
+#hero .btn {
+    height: 46px;
+    padding: 0 2.5rem;
+    transition: background-color 0.2s ease;
+}
+
+#hero .btn:nth-child(2):hover {
+    background-color: #b0b0b048;
+}
+
+.title-bg-primary {
+    color: rgb(var(--lb-black));
     background-color: var(--pr-color-primary);
 }
 
@@ -23,7 +43,7 @@ body {
     color: rgb(var(--lb-black));
 }
 
-.pr-subtitle{
+.pr-subtitle {
     font-size: 36px;
     letter-spacing: .025em;
     font-weight: 575;
@@ -31,9 +51,29 @@ body {
 }
 
 .plan-card {
-    background-color: white;
+    background-color: rgb(var(--lb-black));
     padding: 36px 32px;
     max-width: 330px;
     height: 480px;
     box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.10);
+    color: rgb(var(--lb-title));
+}
+
+.plan-card>span {
+    font-size: 32px;
+}
+
+
+
+
+
+.project-card {
+    background-color: white;
+    max-width: 346px;
+    transition: box-shadow .2s ease, scale .2s ease;
+}
+
+.project-card:hover {
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.10);
+    scale: 1.02;
 }

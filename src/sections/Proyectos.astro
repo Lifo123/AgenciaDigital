@@ -1,16 +1,79 @@
 ---
-
+import ProjectCard from "@Components/ProjectCard.astro";
 ---
 
-<section class="f-col f-justify-center f-align-center w-95 mx-auto" id="proyectos" style="min-height: 70dvh; max-width: var(--maxWidth);">
-    <div class="f-col f-justify-center f-align-center">
-      <h2 class="pr-subtitle">Proyectos Realzados</h2>
-      <p
-          class="m-0 text-center fs-3 mt-3 fw-400"
-          style="line-height: 1.65; max-width: 700px;"
-      >
-          Somos una agencia de diseño web especializada en crear sitios web
-          para tu negocio. Tenemos la solución perfecta para tus necesidades.
-      </p>
+<section
+    class="f-col w-95 mx-auto"
+    id="proyectos"
+    style="max-width: var(--maxWidth);"
+>
+    <h2 class="pr-subtitle">Proyectos Realizados</h2>
+    <p
+        class="m-0 text-center fs-3 mt-3 fw-400 mx-auto"
+        style="line-height: 1.65; max-width: 700px;"
+    >
+        Somos una agencia de diseño web especializada en crear sitios web para
+        tu negocio. Tenemos la solución perfecta para tus necesidades.
+    </p>
+    <div class="f-row g-8 mt-8 f-wrap f-center">
+        <ProjectCard
+            title="WordGuess App"
+            image="https://www.primarygames.com/langarts/wordguess/logo200.png"
+            href="https://wordguess.site/"
+        />
+        <ProjectCard
+            title="Portafolio Web"
+            image="https://pbs.twimg.com/media/GT8DksiWsAEknhk?format=webp&name=medium"
+            href="https://lifo123.site/"
+        />
+        <ProjectCard
+            title="Maneajr Tornernos"
+            image="https://pbs.twimg.com/media/GQyQ7oqWAAAQrox?format=webp&name=medium"
+            href="https://lifo123.github.io/ManageTournaments/"
+        />
+    </div>
+    <a
+        class="btn br-6 mt-7 fs-custom-15 fw-500 mx-auto"
+        style="color:white; background-color: rgb(var(--lb-btn-primary));"
+        href="/portafolio"
+    >
+        Mas proyectos
+    </a>
+    <div class="call-action-project br-14 mt-12 d-flex px-8 py-10">
+        <div
+            class="f-row g-3 f-wrap f-justify-between f-align-center mx-auto w-100"
+        >
+            <div class="f-col g-3">
+                <h2
+                    class="text-left fw-600 fs-8"
+                    style="color: var(--pr-color-primary);"
+                >
+                    ¿Tienes un proyecto en mente?
+                </h2>
+                <p class="text-left m-0">
+                    Agenda una cita para cotizar tu proyecto.
+                </p>
+            </div>
+            <a
+                class="br-6 fs-custom-15 fw-600 h-max mr-10"
+                href="/contacto"
+                style="background-color: #f2f2f2;color:black; padding: .8rem 1.5rem; min-width: max-content;"
+            >
+                ¡Empieza hoy!
+            </a>
+        </div>
     </div>
 </section>
+
+<style>
+    .call-action-project {
+        background-color: black;
+        width: 100%;
+        color: var(--pr-text-black);
+    }
+    @media (width < 520px) {
+        .call-action-project {
+            padding: 2rem 1.6rem !important;
+        }
+    }
+</style>

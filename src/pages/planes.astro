@@ -1,66 +1,64 @@
 ---
 import PlanCard from "@Components/PlanCard.astro";
-import Layout from "@Layouts/Layout.astro";
+import NavigationLayout from "@Layouts/NavigationLayout.astro";
+import Beneficios from "src/sections/Beneficios.astro";
 ---
 
-<Layout title="Portafolio" description="Portafolio">
-	<main
-		class="f-col f-justify-center text-center h-max mt-8 w-95 mx-auto"
-		style="max-width: var(--maxWidth);"
-	>
-		<h1 class="text-center fw-600">
-			<span class="title-bg-primary px-3 br-4 pb-1">Sitios Web</span>
-		</h1>
-		<p class="my-3">
-			Haz crecer tu negocio adquiriendo nuestros servicios.
-		</p>
-		<section class="f-row g-6 f-wrap mx-auto f-center mt-4">
-			<PlanCard
-				price="S/.350.00"
-				title="Landing Page"
-				description="Perfect for those leaving 9-5 and working 24/7."
-				list={["1 Page", "1 Image", "1 Video", "1 Form"]}
-			/>
-			<PlanCard
-				price="S/. 890.00"
-				title="Website 5 Pages"
-				description="Perfect for those leaving 9-5 and working 24/7."
-				list={["1 Page", "1 Image", "1 Video", "1 Form"]}
-			/>
-			<PlanCard
-				price="S/. 1900.00"
-				title="Enterprise Website"
-				description="Perfect for those leaving 9-5 and working 24/7."
-				list={["1 Page", "1 Image", "1 Video", "1 Form"]}
-			/>
-		</section>
-		<h2 class="text-center fw-600 mt-8 fs-8">
-			<span class="title-bg-primary px-3 br-4 pb-1">
-				Aplicaciones Web
-			</span>
-		</h2>
-		<p class="my-3">
-			Haz crecer tu negocio adquiriendo nuestros servicios.
-		</p>
-		<section class="f-row g-6 f-wrap mx-auto f-center mt-4">
-			<PlanCard
-				price="S/.950.00"
-				title="Plan Simple"
-				description="Perfect for those leaving 9-5 and working 24/7."
-				list={["1 Page", "1 Image", "1 Video", "1 Form"]}
-			/>
-			<PlanCard
-				price="S/. 1600.00"
-				title="Plan Multi-Page"
-				description="Perfect for those leaving 9-5 and working 24/7."
-				list={["S/.600+ por cada pagina nueva", "1 Image", "1 Video", "1 Form"]}
-			/>
-			<PlanCard
-				price="+ S/. 7900.00"
-				title="Plan Enterprise"
-				description="Perfect for those leaving 9-5 and working 24/7."
-				list={["1 Page", "1 Image", "1 Video", "1 Form"]}
-			/>
-		</section>
-	</main>
-</Layout>
+<NavigationLayout
+	title="Planes"
+	pageTitle="Planes para tu Sitio Web"
+	pageDescription="¡Empieza hoy! Nuestros planes estan diseñados para escalar con tu negocio."
+>
+	<section class="f-row g-6 f-wrap mx-auto f-center mt-4">
+		<PlanCard
+			price={500}
+			title="Emprendedores"
+			description="Perfect for those leaving 9-5 and working 24/7."
+			list={["1 Page", "1 Image", "1 Video", "1 Form"]}
+		/>
+		<PlanCard
+			price={1400}
+			title="Negocios"
+			description="Perfect for those leaving 9-5 and working 24/7."
+			list={["1 Page", "1 Image", "1 Video", "1 Form"]}
+			active={true}
+		/>
+		<PlanCard
+			price={2500}
+			title="Empresas"
+			description="Perfect for those leaving 9-5 and working 24/7."
+			list={["1 Page", "1 Image", "1 Video", "1 Form"]}
+		/>
+	</section>
+	<Beneficios />
+	<h2 class="text-center fw-600 mt-12 fs-8">
+		<span class="title-bg-primary px-3 br-4 pb-1"> Aplicaciones Web </span>
+	</h2>
+	<p class="my-3">Algun proyecto de programacion en mente? Tenemos planes comodos para tus necesidades.</p>
+	<section class="f-row g-6 f-wrap mx-auto f-center mt-4">
+		<PlanCard
+			price={1800}
+			title="Simple"
+			description="Perfect for those leaving 9-5 and working 24/7."
+			list={["1 Page", "1 Image", "1 Video", "1 Form"]}
+		/>
+		<PlanCard
+			price={3600}
+			title="Multi-Page"
+			description="Perfect for those leaving 9-5 and working 24/7."
+			list={[
+				"S/.600+ por cada pagina nueva",
+				"1 Image",
+				"1 Video",
+				"1 Form",
+			]}
+			active={true}
+		/>
+		<PlanCard
+			price={9800}
+			title="Enterprise"
+			description="Perfect for those leaving 9-5 and working 24/7."
+			list={["1 Page", "1 Image", "1 Video", "1 Form"]}
+		/>
+	</section>
+</NavigationLayout>

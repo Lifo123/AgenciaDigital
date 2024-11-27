@@ -2,35 +2,55 @@
 import Menu from "@Components/aside/Menu";
 ---
 
-<aside class="f-col g-2 fixed h-100" id="aside-menu" style="min-width: 360px;">
-    <div class="f-row f-justify-center f-align-center">
-        <Menu state={false} client:visible />
-        <h2>Aside Menu</h2>
+<aside class="f-col g-2 fixed h-100" id="aside-menu">
+    <div class="f-row f-justify-between f-align-center p-3" style="background-color:black;">
+        <span class="fs-3 fw-400" style="color: white;">Menu de Navegacion</span>
+        <Menu state={false} />
     </div>
-    <ul>
+    <ul class="f-col g-2 py-3 px-4">
         <li><a href="/">Inicio</a></li>
-        <li><a href="/#servicios">Servicios</a></li>
+        <li><a href="/#servicios" onclick="window.location.reload()">Servicios</a></li>
         <li><a href="/planes">Planes</a></li>
         <li><a href="/portafolio">Portafolio</a></li>
-        <li><a href="/FAQs">FAQ's</a></li>
+        <!-- <li><a href="/FAQs">FAQ's</a></li> -->
+        <li class="mt-3">
+            <a
+                href="/contacto"
+                class="aside-contact br-6 fs-custom-15 d-flex f-center"
+                >Contacto</a
+            >
+        </li>
     </ul>
 </aside>
 
 <style>
     #aside-menu {
         background-color: rgb(var(--lb-bg));
-        border-left: solid 1px rgb(var(--lb-br));
-        right: -160%;
+        right: -600px;
         transition: right 0.25s ease;
         z-index: 1000;
+        min-width: 360px;
+        height: 100dvh;
+        box-shadow: 0px -4px 30px rgb(0,0,0, .09);
     }
     #aside-menu.active {
         right: 0;
     }
 
+    .aside-contact{
+        border: solid 1px black;
+        padding: 0.7rem 1.5rem;
+        color: black;
+    }
+
     @media (max-width: 620px) {
         #aside-menu {
             width: 100%;
+        }
+    }
+    @media (max-width: 450px) {
+        #aside-menu {
+            min-width: 100%;
         }
     }
 </style>

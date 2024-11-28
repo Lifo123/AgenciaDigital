@@ -1,65 +1,59 @@
 ---
+import Accordion from "@Components/Accordion/Accordion.astro";
 import NavigationLayout from "@Layouts/NavigationLayout.astro";
+import TiempoRecord from "src/sections/TiempoRecord.astro";
 ---
 
 <NavigationLayout title="FAQs" pageTitle="Preguntas Frecuentes">
-	<div class="mt-8">
-		<button class="accordion">Section 1</button>
-		<div class="panel">
-			<p>Lorem ipsum...</p>
-		</div>
-
-		<button class="accordion">Section 2</button>
-		<div class="panel">
-			<p>Lorem ipsum...</p>
-		</div>
-
-		<button class="accordion">Section 3</button>
-		<div class="panel">
-			<p>Lorem ipsum...</p>
-		</div>
-	</div>
+	<Accordion
+		id="FAQs"
+		items={[
+			{
+				title: "¿Qué servicios ofrece su agencia digital?",
+				content:
+					"Ofrecemos una amplia gama de servicios digitales, incluyendo diseño y desarrollo de sitios web, optimización SEO, marketing digital, gestión de redes sociales, diseño gráfico y mantenimiento web.",
+			},
+			{
+				title: "¿Cuánto tiempo toma desarrollar un sitio web?",
+				content:
+					"El tiempo de desarrollo varía según la complejidad y los requisitos específicos del proyecto. En promedio, un sitio web básico puede estar listo en 5 dias habiles, mientras que los proyectos más complejos pueden tardar entre de 10 a 15 dias habiles.",
+			},
+			{
+				title: "¿Cuál es el costo de desarrollar un sitio web?",
+				content:
+					"El costo depende del tipo de sitio web, sus funcionalidades y el alcance del proyecto. Ofrecemos planes flexibles adaptados a las necesidades de cada cliente. Contáctanos para una cotización personalizada.",
+			},
+			{
+				title: "¿Ofrecen servicios de optimización SEO?",
+				content:
+					"Sí, integramos prácticas SEO en el diseño web para garantizar que su sitio sea visible en motores de búsqueda como Google. También ofrecemos servicios de SEO avanzados para mejorar el posicionamiento y la conversión.",
+			},
+			{
+				title: "¿El sitio web será responsive?",
+				content:
+					"Todos nuestros sitios web están diseñados para ser totalmente responsivos, asegurando una experiencia óptima en dispositivos móviles, tablets y desktops.",
+			},
+			{
+				title: "¿Puedo actualizar el contenido de mi sitio web por mi cuenta?",
+				content:
+					"Sí, desarrollamos sitios web con sistemas de gestión de contenido (CMS) que permiten realizar actualizaciones fácilmente. También ofrecemos capacitaciones para que su equipo pueda gestionar el sitio sin complicaciones.",
+			},
+			{
+				title: "¿Ofrecen soporte y mantenimiento después del lanzamiento?",
+				content:
+					"Ofrecemos servicios de soporte y mantenimiento continuo para asegurar que su sitio web funcione de manera óptima, incluyendo actualizaciones de seguridad, copias de seguridad y mejoras constantes.",
+			},
+			{
+				title: "¿Pueden integrar mi sitio web con otras herramientas o plataformas?",
+				content:
+					"Sí, podemos integrar su sitio web con herramientas externas como CRM, sistemas de gestión de inventario, plataformas de pago, y más, según sus necesidades específicas.",
+			},
+			{
+				title: "¿Cómo garantizan la seguridad de mi sitio web?",
+				content:
+					"Implementamos las mejores prácticas de seguridad, incluyendo certificados SSL, protección contra ataques DDoS, sistemas de autenticación segura y auditorías de seguridad regulares para proteger su sitio web.",
+			},
+		]}
+	/>
+	<TiempoRecord />
 </NavigationLayout>
-
-<style>
-	.accordion {
-		background-color: #eee;
-		color: #444;
-		cursor: pointer;
-		padding: 18px;
-		width: 100%;
-		text-align: left;
-		border: none;
-		outline: none;
-		transition: 0.4s;
-	}
-	.active,
-	.accordion:hover {
-		background-color: #ccc;
-	}
-
-	.panel {
-		padding: 0 18px;
-		background-color: white;
-		max-height: 0;
-		overflow: hidden;
-		transition: max-height 0.2s ease-out;
-	}
-</style>
-
-<script is:inline>
-	var acc = document.getElementsByClassName("accordion");
-	var i;
-
-	for (i = 0; i < acc.length; i++) {
-		acc[i].addEventListener("click", function () {
-			this.classList.toggle("active");
-			var panel = this.nextElementSibling;
-			if (panel.style.maxHeight) {
-				panel.style.maxHeight = null;
-			} else {
-				panel.style.maxHeight = panel.scrollHeight + "px";
-			}
-		});
-	}
-</script>

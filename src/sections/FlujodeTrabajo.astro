@@ -1,10 +1,79 @@
-<section class="f-col w-95 mx-auto mt-14" id="flujodeTrabajo" style="max-width: var(--maxWidth);">
+<section
+    class="f-col w-95 mx-auto mt-14"
+    id="flujodeTrabajo"
+    style="max-width: var(--maxWidth);"
+>
     <h2 class="pr-subtitle">Flujo de Trabajo</h2>
-    <p
-        class="m-0 text-center fs-3 mt-3 fw-400 mx-auto"
-        style="line-height: 1.65; max-width: 700px;"
-    >
-        Somos una agencia de diseño web especializada en crear sitios web para
-        tu negocio. Tenemos la solución perfecta para tus necesidades.
-    </p>
+
+    <div class="f-row g-6 f-wrap f-center mt-8">
+        <div
+            class="flujo-card f-col g-3 f-center p-4"
+            style="max-width: 300px;"
+        >
+            <span class="d-flex f-center br-50 relative fs-7 fw-700">1</span>
+            <h3 class="fs-5 fw-500">Empezamos con una reunión</h3>
+            <p class="fs-3">
+                Tendremos una reunion via Zoom para analizar el proyecto.
+            </p>
+        </div>
+        <div
+            class="flujo-card f-col g-3 f-center p-4"
+            style="max-width: 300px;"
+        >
+            <span class="d-flex f-center br-50 relative fs-7 fw-700">2</span>
+            <h3 class="fs-5 fw-500">Desarrollamos las paginas web</h3>
+            <p class="fs-3">
+                Construimos tu sitio con el mejor diseño y experiencia de usuario.
+            </p>
+        </div>
+        <div
+            class="flujo-card f-col g-3 f-center p-4"
+            style="max-width: 300px;"
+        >
+            <span class="d-flex f-center br-50 relative fs-7 fw-700">3</span>
+            <h3 class="fs-5 fw-500">
+                Revision y lanzamiento final
+            </h3>
+            <p class="fs-3">
+                Finalmente revisaremos y lanzaremos tu sitio web.
+            </p>
+        </div>
+    </div>
 </section>
+
+<style>
+    .flujo-card {
+        background-color: white;
+        top: 0;
+        position: relative;
+        transition: top 0.2s ease, box-shadow 0.2s ease;
+    }
+    .flujo-card:hover {
+        top: -8px;
+        box-shadow: 1px 3px 25px #18191a15;
+    }
+
+    .flujo-card span {
+        background-color: var(--pr-color-primary);
+        height: 50px;
+        aspect-ratio: 1/1;
+        color: black;
+        position: relative;
+        z-index: 1;
+        margin-bottom: .4rem;
+    }
+
+    .flujo-card span::before {
+        content: "";
+        position: absolute;
+        height: 130%;
+        aspect-ratio: 1/1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        opacity: 0.4;
+        background-color: var(--pr-color-primary);
+        z-index: -1;
+    }
+</style>

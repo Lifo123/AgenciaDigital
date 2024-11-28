@@ -1,5 +1,4 @@
 ---
-
 interface Props {
     title: string;
     price: number;
@@ -13,20 +12,39 @@ interface Props {
     active?: boolean;
 }
 
-const { title, price, description, href, list, active, finalMessage, listAdvice, subtitle } = Astro.props;
+const {
+    title,
+    price,
+    description,
+    href,
+    list,
+    active,
+    finalMessage,
+    listAdvice,
+    subtitle,
+} = Astro.props;
 ---
 
-<div class={`plan-card br-14 text-left ${active ? '' : 'dark'}`}>
-    <span>{`${price > 9000 ? '+' : ''} S/${price}`}.00</span>
-    <h2 class="fs-5 fw-400" style="color: white;">{title}</h2>
-    <p>{description}</p>
-    <ul class="f-col g-2 m-0 p-0 ">
+<div class={`plan-card br-14 text-left ${active ? "" : "dark"}`}>
+    <span class="mb-1">{`${price > 9000 ? "+" : ""} S/${price}`}.00</span>
+    <h2 class="fs-5 fw-400 mt-2">{title}</h2>
+    <p class="mt-2 fs-custom-14-5 text-common">{description}</p>
+    <a href={href || "/contacto#form"} class="fs-2 fw-500 br-6 d-flex f-center my-4">
+        Obtener Plan
+    </a>
+    <ul class="f-col g-2 mt-2 p-0">
         {
             list.map((item) => (
-                <li class="fs-custom-15-5 fw-300 f-row g-2">
+                <li class="fs-custom-15 fw-400 f-row g-2 ml-2">
                     <span class="d-flex f-center">
                         <svg viewBox="0 0 24 24" height="16" fill="none">
-                            <path d="m6 12 4 4 9-8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path
+                                d="m6 12 4 4 9-8"
+                                stroke="rgb(var(--lb-white))"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
                         </svg>
                     </span>
                     {item}
@@ -34,5 +52,4 @@ const { title, price, description, href, list, active, finalMessage, listAdvice,
             ))
         }
     </ul>
-    <a href={href || "/contacto"} class="fs-2 fw-500 br-6 d-flex f-center"> Obtener Plan </a>
 </div>

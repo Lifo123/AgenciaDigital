@@ -1,0 +1,66 @@
+---
+interface Props {
+    id: string;
+    className?: string;
+    items: Array<
+        {
+            title: string;
+            content: string;
+            className?: string;
+        }>
+}
+
+const { id, className, items } = Astro.props;
+---
+
+<section class={`mt-8 f-col ${className}`} id={id}>
+    {items.map((item) => {
+        return (
+        <span class="accordion f-row f-justify-between fs-3 text-left br-2">
+            {item?.title}
+            <svg class="no-select" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                    d="M5 12h14m-7-7v14"
+                    stroke="#323232"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                </path>
+            </svg>
+        </span>
+
+        <div class="panel">
+            <p class="text-left fs-3 fw-400 p-3">{item.content}</p>
+        </div>
+        )
+    })}
+</section>
+
+<script async is:inline>
+    const acc = document.querySelectorAll(".accordion");
+
+    const handleAccordion = (e) => {
+        const currentAccordion = e.target;
+        const panel = currentAccordion.nextElementSibling;
+
+        acc.forEach((accordion) => {
+            const panelItem = accordion.nextElementSibling;
+            if (panelItem !== panel) {
+                panelItem.style.maxHeight = null;
+                accordion.classList.remove("active");
+            }
+        });
+
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            currentAccordion.classList.remove("active");
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            currentAccordion.classList.add("active");
+        }
+    };
+
+    acc.forEach((accordion) => {
+        accordion.addEventListener("click", handleAccordion);
+    });
+</script>
